@@ -17,7 +17,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="#" class="image avatar"><img src="images/braincodec_avatar.png" alt="" /></a>
+				<a href="http://www.braincodec.com" class="image avatar"><img src="images/braincodec_avatar.png" alt="" /></a>
 				<h1><strong>Developer, Security Researcher, <br />
 						Maker and everything <br />that my brain wants!</strong><br /><a href="https://github.com/braincodec">GitHub Repository</a>.</h1>
 			</header>
@@ -28,56 +28,77 @@
 				<!-- One -->
 					<section id="two">
 						<header class="major">
-							<h2>This is my new design of a PCB Holder which<br />
-							you can make if you have a 3D Printer.</h2>
+							<h2>Variable especial __name__ de Python</h2>
 						</header>
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
-								<a href="images/fulls/braincodec_PCBHolder_01.png" class="image fit thumb"><img src="images/thumbs/braincodec_PCBHolder_01_thumb.png" alt="" /></a>
-								<h3>Finished PCB Holder.</h3>
-								<p>Here you can see the finished PCB Holder with a PS2 pcb.</p>
-							</article>
-							<article class="6u$ 12u$(xsmall) work-item">
-								<a href="images/fulls/braincodec_PCBHolder_02.png" class="image fit thumb"><img src="images/thumbs/braincodec_PCBHolder_02_thumb.png" alt="" /></a>
-								<h3>Some of the PCB Holder parts.</h3>
-								<p>These are some of the main parts of the PCB Holder.</p>
-							</article>
-						</div>	
-						
-						<p>If you're one of those people who like electronics, then you know how frustrating it can be when you need to hold a PCB for soldering a component.</p>
-
-						<p>That was my case when I decided to make a stand PCB. First I was looking at what was available in the market (Weller by example), in order to have some reference on which to base my design. Finally, I decided on a type of support that allows to turn the PCB in order to be able to have easy access to both sides of it.</p>
-						<p>The hardest part was to design the clamping mechanism. In the end I think I found a good solution, based on three springs that allow the PCB firmly secure but at the same time release with little effort, to rotate if necessary.</p>
-						<ul class="actions">
-							<li><a href="http://www.thingiverse.com/thing:1103401" class="button">Here (in thingiverse) you can download all files.</a></li>
-						</ul>
-					</section>
-
-				<!-- Two -->
-					<section id="two2">
-						<h2>Recent Work</h2>
-						<div class="row">
-							<article class="6u 12u$(xsmall) work-item">
-								<a href="images/fulls/article_0001.png" class="image fit thumb"><img src="images/thumbs/article_0001.png" alt="" /></a>
-								<h3><a href="article_0001.html">FDS6690A MOSFET N-Channel & Logic Level</a></h3>
-								<p>Si buscas un MOSFET con encapsulado SMD especialmente indicado para aplicaciones de switching, de baja potencia, dirigidas por batería y capaz de trabajar con niveles lógicos, te presento al FDS6690A.</p>
-								<br />
-								<ul class="actions">
-									<li><a href="article_0001.html" class="button">Ver art&iacuteculo completo (Spanish)</a></li>
-								</ul>
-							</article>
-							
-							<article class="6u 12u$(xsmall) work-item">
 								<a href="images/fulls/article_0002.png" class="image fit thumb"><img src="images/thumbs/article_0002.png" alt="" /></a>
-								<h3><a href="article_0002.html">Variable especial __name__ de Python</a></h3>
-								<p>La mágia que se esconde detrás de la variable especial __main__ de python ó ¿qué podemos hacer cuando necesitamos ejecutar un script directamente pero al mismo tiempo que pueda ser un módulo importable desde otros scripts?</p>
-								<br />
-								<ul class="actions">
-									<li><a href="article_0002.html" class="button">Ver art&iacuteculo completo (Spanish)</a></li>
-								</ul>
+								<h3>El intérprete de python inicializa __name__</h3>
+								<p>En la imagen superior podemos observar un uso típico de la variable especial __name__.</p>
 							</article>
 						</div>
-					</section>				
+
+<p>En muchos programas de python nos encontramos con que se hace uso de una variable especial llamada __name__ y que parece estar ahí como por arte de magia. Pues bien, dicha magia "existe" y es elpropio intérprete de Python el que se encarga de hacerla y de crear e inicializar la variable __name__ antes de ejecutar el código del programa.</p>
+<p>El intérprete de python crea diversas variables "especiales" y, en el caso que nos ocupa de la variable __name__ la inicializa con el valor "__main__" cuando el script se ejecuta directamente. Sin embargo, si el script se importa desde otro módulo o script, la variable __name__ será inicializada por el intérprete para que contenga el nombre del módulo.</p>
+<p>Nada mejor que un ejemplo práctico para entender el funcionamiento de la variable __name__ de python. En este sencillo script vamos a tener una función "Suma(op1, op2)" que sencillamente va a hacer la suma de los dos operandos que la pasamos como parámetros.</p>
+
+<p>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> sys
+
+<span style='color:#800000; font-weight:bold; '>def</span> Suma<span style='color:#808030; '>(</span>op1<span style='color:#808030; '>,</span> op2<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+  <span style='color:#800000; font-weight:bold; '>return</span> op1 <span style='color:#44aadd; '>+</span> op2
+
+<span style='color:#800000; font-weight:bold; '>def</span> main<span style='color:#808030; '>(</span>argv<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+  <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#400000; '>len</span><span style='color:#808030; '>(</span>argv<span style='color:#808030; '>)</span> <span style='color:#44aadd; '>==</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>:</span>
+    <span style='color:#800000; font-weight:bold; '>print</span> <span style='color:#0000e6; '>"Resultado de la suma: "</span> <span style='color:#44aadd; '>+</span> <span style='color:#400000; '>str</span><span style='color:#808030; '>(</span>Suma<span style='color:#808030; '>(</span><span style='color:#400000; '>int</span><span style='color:#808030; '>(</span>argv<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> <span style='color:#400000; '>int</span><span style='color:#808030; '>(</span>argv<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+  <span style='color:#800000; font-weight:bold; '>else</span><span style='color:#808030; '>:</span>
+    sys<span style='color:#808030; '>.</span>exit<span style='color:#808030; '>(</span><span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span>
+
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#074726; '>__name__</span> <span style='color:#44aadd; '>==</span> <span style='color:#0000e6; '>"__main__"</span><span style='color:#808030; '>:</span>
+  main<span style='color:#808030; '>(</span>sys<span style='color:#808030; '>.</span>argv<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>:</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+</pre>
+</p>
+  
+<p>Si nos fijamos, además de la función "Suma(op1, op2)", también he definido una función "main(argv)". Si ejecutamos este script directamente desde python, veremos que se va a ejecutar la función "main(argv)". Esto es así, gracias al condicional que aparece al final del script, el cual comprueba el valor de __name__ y si este es igual a "__main__", es decir, si el script se ha ejecutado directamente, entonces ejecutará la función "main(argv)". Veamos el resultado de la ejecución de este script:</p>
+
+<p style="background:black">
+C:\Python27>python test.py 4 3<br/>
+Resultado de la suma: 7<br/>
+</p>
+<p>Esto está muy bien, porque nos permite ejecutar el script directamente pero además, poder importarlo desde otro script para hacer uso de la función "Suma(op1, op2)". En este caso lo que no nos interesará es que se ejecute la función "main(argv)", si no tan solo poder utilizar la función "Suma(op1, op2)", haciendo de esta manera un uso del script o módulo como si de una biblioteca de funciones se tratará. Esta vez vamos a hacer uso del módulo directamente desde el propio intérprete de python:</p>
+
+<p style="background:black">
+C:\Python27>python<br/>
+Python 2.7.1 (r271:86832, Nov 27 2010, 18:30:46) [MSC v.1500 32 bit (Intel)] on win32<br/>
+Type "help", "copyright", "credits" or "license" for more information.<br/>
+>>> import test<br/>
+>>> test.Suma(4, 3)<br/>
+7<br/>
+</p>
+
+<p>Como podemos observar, en esta ocasión hemos importado el módulo cuyo nombre es "test" y, hemos llamado a la función suma, pasándola como parámetros el 4 y el 3 y, obviamente obteniendo la suma de ambos como resultado. Además, si nos fijamos en el la salida, no se ha ejecutado la función "main(argv)".</p>
+
+<p>Vamos a utilizar el modulo "test" importándolo desde otro script de python y además, vamos a consultar el valor de la variable __name__ para que veamos como el intérprete de python la inicializa para que contenga el nombre del módulo.</p>
+
+<p>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> test
+
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#074726; '>__name__</span> <span style='color:#44aadd; '>==</span> <span style='color:#0000e6; '>'__main__'</span><span style='color:#808030; '>:</span>
+  <span style='color:#800000; font-weight:bold; '>print</span> <span style='color:#0000e6; '>'Resultado de la suma: '</span> <span style='color:#44aadd; '>+</span> <span style='color:#400000; '>str</span><span style='color:#808030; '>(</span>test<span style='color:#808030; '>.</span>Suma<span style='color:#808030; '>(</span><span style='color:#008c00; '>4</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>3</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+  <span style='color:#800000; font-weight:bold; '>print</span> <span style='color:#0000e6; '>'Valor de __name__ para el script actual: '</span> <span style='color:#44aadd; '>+</span> <span style='color:#074726; '>__name__</span>
+  <span style='color:#800000; font-weight:bold; '>print</span> <span style='color:#0000e6; '>'Valor de __name__ para el modulo importado: '</span> <span style='color:#44aadd; '>+</span> test<span style='color:#808030; '>.</span><span style='color:#074726; '>__name__</span>
+</pre>
+</p>
+
+<p>Ejecutemos este script y veamos el resultado:<p>
+<p style="background:black">
+C:\Python27>python script2.py<br/>
+Resultado de la suma: 7<br/>
+Valor de __name__ para el script actual: __main__<br/>
+Valor de __name__ para el modulo importado: test<br/>
+</p>
+<p>Y esto es todo, ahora ya sabeis que se puede escribir scripts de python para que sean ejecutados directamente, o para ser utilizados como módulos importables desde otros scripts, pudiendo decidir gracias a la variables __name__, que parte del código del módulo queremos que se ejecute cuando se utiliza como script independiente ó dicho de otra forma, que parte de código no queremos que sea ejecutado cuando se utiliza como módulo importable.
+					</section>
 
 				<!-- Three -->
 					<section id="three">
