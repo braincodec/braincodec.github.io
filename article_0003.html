@@ -44,7 +44,7 @@
 
 <p>Parece lógico pensar, que un código que inicialmente está ofuscado, empaquetado, o que hace uso de determinadas APIs del sistema, ya tiene una cierta probabilidad de ser malware y por lo tanto empezar a tratarlo de manera especial.</p>
 
-<p>Durante estos días he estado analizando un nuevo malware, posiblemente una variante de tantas que andan circulando en estos días por internet. En concreto, lo que tengo entre manos es un Ransomware, si compañeros, un especimen cuyo único objetivo es económico, para lo cual no se les ocurre nada mejor que cifrar parte de los archivos que se encuentran en tu disco duro (principalmente partes valiosas para el usuario) y por lo tanto, dejarlos inservibles, eso sí, si pagamos una módica cantidad de dinero (normalmente en torno a unos 500 USD$), ya podremos "en teoría" descifrar nuestros archivos para seguir utilizándolos con normalidad. Por supuesto, no recomiendo pagar ni un solo dolar/euro.</p>
+<p>Durante estos días he estado analizando un nuevo malware, posiblemente una variante de tantas que andan circulando en estos días por internet. En concreto, lo que tengo entre manos es un Ransomware, si compañeros, un especimen cuyo único objetivo es económico, para lo cual no se les ocurre nada mejor que cifrar parte de los archivos que se encuentran en tu disco duro (principalmente partes valiosas para el usuario) y por lo tanto, dejarlos inservibles, eso sí, si pagamos una módica cantidad de dinero (normalmente en torno a unos 500 USD$), ya podremos "en teoría" descifrar nuestros archivos para seguir utilizándolos con normalidad. Por supuesto, no recomiendo pagar ni un solo dolar/euro/bitcoin/etc.</p>
 
 <p>Pues bien, el malware del que os hablo (identificado a día de hoy como Ransom:Win32/Tescrypt.D por Microsoft) llegó a una de mis trampas a través de un correo electrónico con un mensaje engañoso relacionado con una cuenta bancaria y un posible descubierto, y con un adjunto en formato ZIP cuyo nombre era algo como SCAN_INVOICE_nnnnn.ZIP</p>
 
@@ -58,7 +58,7 @@
 
 <p>Dicho archivo binario se descargaba de una de las siguientes URLs: "whatdidyaysay . com / 97 . exe?1 y iamthewinnerhere . com / 97 . exe?1"</p>
 
-<p>A partir de aquí analizar este troyano y localizar la parte encargada de cifrar con RSA nuestros archivos fue bastante trivial.</p>
+<p>A partir de aquí analizar este troyano y localizar la parte encargada de cifrar con AES, intercambiar contraseñas RSA, o calcular hashes MD5, etc nuestros archivos fue bastante trivial.</p>
 
 <p>Lo que quiero comentaros aquí, es una de las muchas malas prácticas que siguen en ocasiones los programadores de malware (que por supuesto, no son los únicos). Esta consiste en la reutilización de código, ya sea de otros malwares o directamente de código fuente extraido de la red, muchas veces de herramientas OpenSource, y otras directamente de los ejemplos de código que se incluyen en multitud de libros y fuentes de conocimiento de fabricantes como es el caso de la MSDN.</p>
 
