@@ -58,9 +58,9 @@
 
 <p>Dicho archivo binario se descargaba de una de las siguientes URLs: "whatdidyaysay . com / 97 . exe?1 y iamthewinnerhere . com / 97 . exe?1"</p>
 
-<p>A partir de aquí analizar este troyano y localizar la parte encargada de cifrar con AES, intercambiar contraseñas RSA, o calcular hashes MD5, etc nuestros archivos fue bastante trivial.</p>
+<p>A partir de aquí analizar este troyano y localizar la parte encargada de cifrar con AES, intercambiar contraseñas RSA, o calcular hashes MD5, etc fue bastante trivial.</p>
 
-<p>Lo que quiero comentaros aquí, es una de las muchas malas prácticas que siguen en ocasiones los programadores de malware (que por supuesto, no son los únicos). Esta consiste en la reutilización de código, ya sea de otros malwares o directamente de código fuente extraido de la red, muchas veces de herramientas OpenSource, y otras directamente de los ejemplos de código que se incluyen en multitud de libros y fuentes de conocimiento de fabricantes como es el caso de la MSDN.</p>
+<p>Pero lo que quiero comentar aquí, es una de las muchas malas prácticas que siguen en ocasiones los programadores de malware (que por supuesto, no son los únicos). Esta consiste en la reutilización de código, ya sea de otros malwares o directamente de código fuente extraido de la red, muchas veces de herramientas OpenSource, y otras directamente de los ejemplos de código que se incluyen en multitud de libros y fuentes de conocimiento de fabricantes como es el caso de la MSDN.</p>
 
 <p>Pues sí, en esta ocasión, el ransomware Win32/Tescrypt.D hace uso de un código de ejemplo programado en 'C' y disponible en la red, cuya finalidad es tan solo mostrar a los que se inician en el mundo de la programación directa con APIs de windows y 'C' como hacer su primer programa con GUI. En concreto nos encontramos con parte de código en 'C' publicado en un foro, y si buscais por esta cadena dareis con él: "Log Window Test App - by Napalm". Para los más vagos, aquí tenéis el  enlace en cuestión "http://www.rohitab.com/discuss/topic/36060-c-win32-gui-example-programs/"</p>
 
